@@ -52,7 +52,7 @@
 				<!-- custom css pdr -->
 				<link rel="stylesheet" href="css/style.css"/>
 	</head>
-	<body ng-app="instantsearch" data-ng-controller="TestController">
+	<body ng-app="code-cafe" data-ng-controller="AppController">
 	<div class="container">
 		<div class="row">
 		<div class="col-sm-8 jumbotron">
@@ -89,7 +89,7 @@
 		<input type="text" class="search" ng-model="searchString" placeholder="Search (title , language or level)" />
 				</div>
 				<ul >
-					<li data-ng-repeat="item in  items|  myfilter:types | searchFor:searchString">
+					<li data-ng-repeat="item in  items|  check:compileStatus | searchFor:searchString">
 						<div style="background:white;margin:10%;border-radius:10px;padding:10px">
 							<div style="color:cyan"><h3>{{item.title}}</h3></div>
 							
