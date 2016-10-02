@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>code Cafe</title>
+		<link href="css/site.css" rel="stylesheet" type="text/css" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Celebrate Your Relationship">
+		<meta name="keywords" content="Slam,Slambook">
+		<meta name="author" content="Kodanda Rama Durgarao Poluri">
+		
+		<!--
+		<link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+		-->
+		
+
+		
+		
+		<!-- Angularjs script -->
+				<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+				<!-- Angularjs route -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+
+				<!-- Bootstrap css -->
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+				<!-- Bootstrap jquery  -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+				<!-- Bootstrap javascript -->
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+				<script src="js/angular.min.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+				<script src="js/angular-route.min.js"></script>
+				<script src="js/jquery.min.js"></script>
+				<link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+
+
+
+
+				<!-- Angular app script pdr -->
+				<script src="scripts/script.js"></script>
+
+				<!-- custom css pdr -->
+				<link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body ng-app="instantsearch">
+	<div class="container">
+		<div class="row">
+		<div class="col-sm-8 jumbotron">
+			<div ng-controller="instantSearchCtrl">
+				<div>
+					<input type="text" class="search" ng-model="searchString" placeholder="Search (title , language or level)" />
+				</div>
+				<ul >
+					<li ng-repeat="i in items | searchFor:searchString | myfilter:status">
+						<div style="background:white;margin:10%;border-radius:10px;padding:10px">
+							<div style="color:cyan"><h3>{{i.title}}</h3></div>
+							
+							<div style="border:1px solid black;overflow:hidden">
+								<div style="margin:10px;border:1px solid black;text-align:justify;width:50%;border-radius:2px;" class="text-right">{{i.compiler_status+' | '+i.language}}</div>
+								<div>{{i.source_code}}</div>
+								
+							</div>
+							
+							
+						</div>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-4">
+		<div>
+			<h3 style="padding:2%;border-radius:10%;border:1px solid red">Filter by Status</h3>
+			<div class="jumbotron">
+				<input type="checkbox" data-ng-model='status.Accepted'>Accepted</br>
+				<input type="checkbox" name="vehicle" value="Bike">Skipped</br>
+				<input type="checkbox" name="vehicle" value="Bike">Memory/Time limit exeeded</br>
+				<input type="checkbox" name="vehicle" value="Bike">Runtime/ Compilation error</br>
+				<input type="checkbox" name="vehicle" value="Bike">Wrong answer</br>
+			</div>
+			</div>
+			<div>
+				<h3 style="padding:2%;border-radius:10%;border:1px solid red">Statistical analysis</h3>
+				<div class="jumbotron" ng-controller="totalCtrl">
+					<ul>
+						<li>Top 5 Languages used
+							<ul>
+								<ul>
+									<li ng-repeat="item in total"><a href="#">{{item.websites.id}}</a></li>
+								</ul>
+							</ul>
+						</li>
+						<li>Top 2 Submissions attempted</li>
+						<li>Number of submissions per level</li>
+						<li>Total Submissions : {{getTotal()}}</li>
+					</ul>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div>
+			<ul class="pagination">
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+		  </ul>
+		</div>
+	</div>
+	</body>
+	<script src="js/script.js"></script>
+</html>
