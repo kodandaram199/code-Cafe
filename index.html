@@ -52,11 +52,11 @@
 				<!-- custom css pdr -->
 				<link rel="stylesheet" href="css/style.css"/>
 	</head>
-	<body ng-app="instantsearch">
+	<body ng-app="instantsearch" data-ng-controller="TestController">
 	<div class="container">
 		<div class="row">
 		<div class="col-sm-8 jumbotron">
-			<div ng-controller="instantSearchCtrl">
+			<!--<div ng-controller="instantSearchCtrl">
 				<div>
 					<input type="text" class="search" ng-model="searchString" placeholder="Search (title , language or level)" />
 				</div>
@@ -76,13 +76,54 @@
 						
 					</li>
 				</ul>
-			</div>
+			</div>-->
+			
+			
+			
+			
+			<div >
+			
+		
+		
+		<div>
+		<input type="text" class="search" ng-model="searchString" placeholder="Search (title , language or level)" />
+				</div>
+				<ul >
+					<li data-ng-repeat="hotel in  items|  myfilter:types | searchFor:searchString">
+						<div style="background:white;margin:10%;border-radius:10px;padding:10px">
+							<div style="color:cyan"><h3>{{hotel.title}}</h3></div>
+							
+							<div style="border:1px solid black;overflow:hidden">
+								<div style="margin:10px;border:1px solid black;text-align:justify;width:50%;border-radius:2px;" class="text-right">{{hotel.compiler_status+' | '+hotel.language}}</div>
+								<div>{{hotel.source_code}}</div>
+								
+							</div>
+							
+							
+						</div>
+						
+					</li>
+				</ul>
+        
+        
+    </div>
+			
+			
+			
 		</div>
 		<div class="col-sm-4">
+		
+		
+		
+		
+		
+		
+		
+		
 		<div>
 			<h3 style="padding:2%;border-radius:10%;border:1px solid red">Filter by Status</h3>
 			<div class="jumbotron">
-				<input type="checkbox" data-ng-model='status.Accepted'>Accepted</br>
+				<input type="checkbox" data-ng-model='types.Accepted'>Accepted</br>
 				<input type="checkbox" name="vehicle" value="Bike">Skipped</br>
 				<input type="checkbox" name="vehicle" value="Bike">Memory/Time limit exeeded</br>
 				<input type="checkbox" name="vehicle" value="Bike">Runtime/ Compilation error</br>
@@ -91,18 +132,18 @@
 			</div>
 			<div>
 				<h3 style="padding:2%;border-radius:10%;border:1px solid red">Statistical analysis</h3>
-				<div class="jumbotron" ng-controller="totalCtrl">
+				<div class="jumbotron" >
 					<ul>
 						<li>Top 5 Languages used
 							<ul>
 								<ul>
-									<li ng-repeat="item in total"><a href="#">{{item.websites.id}}</a></li>
+									<li ng-repeat="item in total"><a href="#"></a></li>
 								</ul>
 							</ul>
 						</li>
 						<li>Top 2 Submissions attempted</li>
 						<li>Number of submissions per level</li>
-						<li>Total Submissions : {{getTotal()}}</li>
+						<li>Total Submissions : </li>
 					</ul>
 			</div>
 			</div>
