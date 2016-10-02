@@ -123,11 +123,11 @@
 		<div>
 			<h3 style="padding:2%;border-radius:10%;border:1px solid red">Filter by Status</h3>
 			<div class="jumbotron">
-				<input type="checkbox" data-ng-model='types.Accepted'>Accepted</br>
+				<input type="checkbox" data-ng-model='compileStatus.Accepted'>Accepted</br>
 				<input type="checkbox" name="vehicle" value="Bike">Skipped</br>
-				<input type="checkbox" name="vehicle" value="Bike">Memory/Time limit exeeded</br>
-				<input type="checkbox" name="vehicle" value="Bike">Runtime/ Compilation error</br>
-				<input type="checkbox" name="vehicle" value="Bike">Wrong answer</br>
+				<input type="checkbox" data-ng-model='compileStatus.Time'>Memory/Time limit exeeded</br>
+				<input type="checkbox" data-ng-model='compileStatus.Error'>Runtime/ Compilation error</br>
+				<input type="checkbox" data-ng-model='compileStatus.Wrong'>Wrong answer</br>
 			</div>
 			</div>
 			<div>
