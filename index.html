@@ -89,13 +89,13 @@
 		<input type="text" class="search" ng-model="searchString" placeholder="Search (title , language or level)" />
 				</div>
 				<ul >
-					<li data-ng-repeat="hotel in  items|  myfilter:types | searchFor:searchString">
+					<li data-ng-repeat="item in  items|  myfilter:types | searchFor:searchString">
 						<div style="background:white;margin:10%;border-radius:10px;padding:10px">
-							<div style="color:cyan"><h3>{{hotel.title}}</h3></div>
+							<div style="color:cyan"><h3>{{item.title}}</h3></div>
 							
 							<div style="border:1px solid black;overflow:hidden">
-								<div style="margin:10px;border:1px solid black;text-align:justify;width:50%;border-radius:2px;" class="text-right">{{hotel.compiler_status+' | '+hotel.language}}</div>
-								<div>{{hotel.source_code}}</div>
+								<div style="margin:10px;border:1px solid black;text-align:justify;width:50%;border-radius:2px;" class="text-right">{{item.compiler_status+' | '+item.language}}</div>
+								<div>{{item.source_code}}</div>
 								
 							</div>
 							
